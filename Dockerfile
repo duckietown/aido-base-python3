@@ -17,7 +17,7 @@ RUN pipdeptree
 
 ENV DISABLE_CONTRACTS 1
 
-LABEL version="5.0.0"
+LABEL version="5.1.0"
 ARG git-commit
 ARG git-branch
 ARG git-remote-url
