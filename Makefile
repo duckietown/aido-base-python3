@@ -1,27 +1,19 @@
 repo=aido-base-python3
-# repo=$(shell basename -s .git `git config --get remote.origin.url`)
 branch=$(shell git rev-parse --abbrev-ref HEAD)
 tag=duckietown/$(repo):$(branch)
 
-build:
-	pur -r requirements.txt -o requirements.resolved
-	docker build --pull -t $(tag) .
+bump:
+	bumpversion minor
 
-build-no-cache:
-	docker build --pull -t $(tag)  --no-cache .
+build:
+	pur -r requirements.txt -f -m '*' -o requirements.resolved
+	docker build --pull -t $(tag) \
+		--build-arg git-commit=$(shell git log -1 --format=%H) \
+		--build-arg git-branch=$(shell shell git rev-parse --abbrev-ref HEAD) \
+		--build-arg git-remote-url=$(shell git config --get remote.origin.url) \
+		--build-arg builder=$(shell whoami) \
+		.
 
 push: build
 	docker push $(tag)
 
-test-data1-direct:
-	./dummy_image_filter.py < test_data/in1.json > test_data/out1.json
-
-test-data1-docker:
-	docker run -i $(tag) < test_data/in1.json > test_data/out1.json
-
-
-test-data1-direct-more:
-	cat  test_data/in1.json | \
-		./dummy_image_filter.py --name node1  | \
-		./dummy_image_filter.py --name node2  \
-		> test_data/out1.json
