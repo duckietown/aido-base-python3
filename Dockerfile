@@ -25,6 +25,6 @@ ARG builder
 
 LABEL git-commit=$git-commit
 LABEL git-branch=$git-branch
-LABEL git-remote-url=$git-commit
+LABEL git-remote-url=$git-remote-url
 LABEL builder=$builder
 
