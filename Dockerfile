@@ -7,11 +7,11 @@ RUN apt-get update && apt-get install -y ffmpeg mencoder && apt-get clean && \
 
 RUN pip install -U pip && rm -rf /root/.cache
 
-COPY requirements1.txt requirements1.resolved ./
-RUN pip install -r requirements1.txt && rm -rf /root/.cache
+COPY requirements1.*  ./
+RUN pip install -r requirements1.resolved && rm -rf /root/.cache
 
-COPY requirements2.txt requirements2.resolved ./
-RUN pip install -r requirements2.txt && rm -rf /root/.cache
+COPY requirements2.* ./
+RUN pip install -r requirements2.resolved && rm -rf /root/.cache
 
 RUN pip freeze | tee /pip-freeze.txt
 RUN pip list | tee /pip-list.txt
