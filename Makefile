@@ -6,7 +6,8 @@ bump:
 	bumpversion minor
 
 build:
-	pur -r requirements.txt -f -m '*' -o requirements.resolved
+	pur -r requirements1.txt -f -m '*' -o requirements1.resolved
+	pur -r requirements2.txt -f -m '*' -o requirements2.resolved
 	docker build --pull -t $(tag) \
 		--build-arg git-commit="$(shell git log -1 --format=%H)" \
 		--build-arg git-branch="$(shell git rev-parse --abbrev-ref HEAD)" \
