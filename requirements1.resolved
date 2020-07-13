@@ -1,11 +1,11 @@
-numpy==1.18.2
-opencv-python==4.2.0.32
-zuper-nodes-z6==6.0.23
-zuper-typing-z6==6.0.60
-zuper-ipce-z6==6.0.26
-zuper-commons-z6==6.0.21
+numpy==1.19.0
+opencv-python==4.2.0.34
+zuper-nodes-z6==6.0.25
+zuper-typing-z6==6.0.67
+zuper-ipce-z6==6.0.30
+zuper-commons-z6==6.0.30
 duckietown-challenges-daffy-aido4==5.3.22
-duckietown-challenges-runner-daffy-aido4==5.0.38
+duckietown-challenges-runner-daffy-aido4==5.0.40
 duckietown-serialization-ds1>=1.0.10,<2
 duckietown-tokens==5.3.3
 
@@ -15,14 +15,14 @@ duckietown-tokens==5.3.3
 pipdeptree==0.13.2
 
 # those are needed later anyway, we optimize a bit
-plotly # opt==4.5.4
-scipy # opt==1.4.1
+plotly # opt==4.8.1
+scipy # opt==1.5.0
 PyGeometry # opt==1.5.7
-beautifulsoup4 # opt==4.8.2
-lxml # opt==4.5.0
-Pillow # opt==7.0.0
-markdown # opt==3.2.1
-soupsieve # opt==2.0
+beautifulsoup4 # opt==4.9.1
+lxml # opt==4.5.1
+Pillow # opt==7.1.2
+markdown # opt==3.2.2
+soupsieve # opt==2.0.1
 retrying # opt==1.3.3
 pydot # opt==1.4.1
-compmake # opt==4.0.4
+compmake # opt==6.0.4

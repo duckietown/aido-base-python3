@@ -8,16 +8,14 @@ duckietown-challenges-daffy-aido4
 duckietown-challenges-runner-daffy-aido4
 duckietown-serialization-ds1>=1.0.9,<2
 duckietown-tokens
-
-
--e git://github.com/AndreaCensi/procgraph.git@master-python3#egg=procgraph
+procgraph-z6
 
 pipdeptree==0.13.2
 
 # those are needed later anyway, we optimize a bit
 plotly # opt
 scipy # opt
-PyGeometry # opt
+PyGeometry-z6 # opt
 beautifulsoup4 # opt
 lxml # opt
 Pillow # opt
@@ -25,4 +23,4 @@ markdown # opt
 soupsieve # opt
 retrying # opt
 pydot # opt
-compmake # opt
+compmake-z6 # opt
