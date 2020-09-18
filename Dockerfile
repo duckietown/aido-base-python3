@@ -1,4 +1,4 @@
-FROM python:3.7
+FROM python:3.8
 WORKDIR /project
 
 RUN apt-get update && apt-get install -y  net-tools ffmpeg mencoder && apt-get clean && \
