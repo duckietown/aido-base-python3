@@ -3,6 +3,7 @@ PIP_INDEX_URL ?= https://pypi.org/simple
 
 repo=aido-base-python3
 branch=$(shell git rev-parse --abbrev-ref HEAD)
+branch=daffy
 tag=$(AIDO_REGISTRY)/duckietown/$(repo):$(branch)
 
 all:
