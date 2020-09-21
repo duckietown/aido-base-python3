@@ -1,14 +1,14 @@
 numpy==1.19.2
 opencv-python==4.4.0.42
-zuper-nodes-z6==6.0.28
+zuper-nodes-z6==6.0.30
 zuper-typing-z6==6.1.7
 zuper-ipce-z6==6.0.35
 zuper-commons-z6==6.1.5
-duckietown-challenges-daffy==6.0.2
-duckietown-challenges-runner-daffy==6.0.0
+duckietown-challenges-daffy==6.0.12
+duckietown-challenges-runner-daffy==6.0.1
 duckietown-serialization-ds1>=1.0.10,<2
 duckietown-tokens==5.3.3
-procgraph-z6==6.0.1
+procgraph-z6==6.0.2
 
 pipdeptree==0.13.2
 
