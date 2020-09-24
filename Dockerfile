@@ -31,15 +31,18 @@ RUN pip list | tee /pip-list.txt
 RUN pipdeptree
 
 ENV DISABLE_CONTRACTS 1
+ 
 
-LABEL version="5.1.0"
+ARG git_repo
 ARG git_commit
 ARG git_branch
 ARG git_remote_url
 ARG builder
 
-LABEL git-commit=${git_commit}
-LABEL git-branch=${git_branch}
-LABEL git-remote-url=${git_remote_url}
-LABEL builder=${builder}
-
+LABEL L.${git_repo}.AIDO_REGISTRY="${AIDO_REGISTRY}"
+LABEL L.${git_repo}.PIP_INDEX_URL="${PIP_INDEX_URL}"
+LABEL L.${git_repo}.git_repo=${git_repo}
+LABEL L.${git_repo}.git_commit=${git_commit}
+LABEL L.${git_repo}.git_branch=${git_branch}
+LABEL L.${git_repo}.git_remote_url=${git_remote_url}
+LABEL L.${git_repo}.builder=${builder}

@@ -23,6 +23,8 @@ build: update-reqs
 
 	docker build --pull -t $(tag) \
 		--build-arg PIP_INDEX_URL=$(PIP_INDEX_URL)\
+		--build-arg AIDO_REGISTRY=$(AIDO_REGISTRY)\
+		--build-arg git_repo="$(repo)" \
 		--build-arg git_commit="$(shell git log -1 --format=%H)" \
 		--build-arg git_branch="$(shell git rev-parse --abbrev-ref HEAD)" \
 		--build-arg git_remote_url="$(shell git config --get remote.origin.url)" \
@@ -35,3 +37,4 @@ push: build
 
 	#		--build-arg PIP_INDEX_URL=$(PIP_INDEX_URL) \
 	#		--build-arg PIP_TRUSTED_HOST=192.168.1.36 \
+
