@@ -16,8 +16,11 @@ update-reqs:
 	pur --index-url $(PIP_INDEX_URL) -r requirements2.txt -f -m '*' -o requirements2.resolved
 	aido-update-reqs requirements2.resolved
 
-bump:
-	bumpversion minor
+bump: # v2
+	bumpversion patch
+	git push --tags
+	git push
+
 
 build: update-reqs
 
