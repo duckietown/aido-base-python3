@@ -1,7 +1,8 @@
 AIDO_REGISTRY ?= docker.io
 PIP_INDEX_URL ?= https://pypi.org/simple
 
-repo=aido-base-python3
+repo0=$(shell basename -s .git `git config --get remote.origin.url`)
+repo=$(shell echo $(repo0) | tr A-Z a-z)
 branch=$(shell git rev-parse --abbrev-ref HEAD)
 branch=daffy
 tag=$(AIDO_REGISTRY)/duckietown/$(repo):$(branch)
@@ -21,18 +22,13 @@ bump: # v2
 	git push --tags
 	git push
 
-
-build: update-reqs
-
-	docker build --pull -t $(tag) \
+build_options=\
 		--build-arg PIP_INDEX_URL=$(PIP_INDEX_URL)\
 		--build-arg AIDO_REGISTRY=$(AIDO_REGISTRY)\
-		--build-arg git_repo="$(repo)" \
-		--build-arg git_commit="$(shell git log -1 --format=%H)" \
-		--build-arg git_branch="$(shell git rev-parse --abbrev-ref HEAD)" \
-		--build-arg git_remote_url="$(shell git config --get remote.origin.url)" \
-		--build-arg builder="$(shell whoami)" \
-		.
+		$(shell aido-labels)
+
+build: update-reqs
+	docker build --pull -t $(tag) $(build_options) .
 
 push: build
 	docker push $(tag)
