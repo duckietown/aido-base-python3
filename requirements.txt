@@ -24,3 +24,4 @@ soupsieve # opt
 retrying # opt
 pydot # opt
 compmake-z6 # opt
+aido-protocols-daffy

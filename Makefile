@@ -12,10 +12,8 @@ all:
 
 
 update-reqs:
-	pur --index-url $(PIP_INDEX_URL) -r requirements1.txt -f -m '*' -o requirements1.resolved
-	aido-update-reqs requirements1.resolved
-	pur --index-url $(PIP_INDEX_URL) -r requirements2.txt -f -m '*' -o requirements2.resolved
-	aido-update-reqs requirements2.resolved
+	pur --index-url $(PIP_INDEX_URL) -r requirements.txt -f -m '*' -o requirements.resolved
+	aido-update-reqs requirements.resolved
 
 bump: # v2
 	bumpversion patch

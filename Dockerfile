@@ -9,14 +9,11 @@ RUN apt-get update && apt-get install -y  net-tools ffmpeg mencoder && apt-get c
 ARG PIP_INDEX_URL
 ENV PIP_INDEX_URL=${PIP_INDEX_URL}
 
-RUN pip install -U pip>=20.2 && rm -rf /root/.cache
+RUN pip3 install -U pip>=20.2
+COPY requirements.* ./
+RUN cat requirements.* > .requirements.txt
+RUN pip3 install --use-feature=2020-resolver -r .requirements.txt
 
-
-COPY requirements1.*  ./
-RUN pip install --use-feature=2020-resolver  -r requirements1.resolved && rm -rf /root/.cache
-
-COPY requirements2.* ./
-RUN pip install --use-feature=2020-resolver   -r requirements2.resolved && rm -rf /root/.cache
 
 RUN pip freeze | tee /pip-freeze.txt
 RUN pip list | tee /pip-list.txt
