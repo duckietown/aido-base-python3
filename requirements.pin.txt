@@ -1,0 +1,10 @@
+
+pipdeptree==0.13.2
+plotly # opt
+scipy # opt
+lxml # opt
+Pillow # opt
+markdown # opt
+soupsieve # opt
+retrying # opt
+pydot # opt
