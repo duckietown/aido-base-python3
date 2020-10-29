@@ -1,13 +1,9 @@
 
 build:
-	dts build_utils aido-container-build
+	dts build_utils aido-container-build --ignore-untagged
 
 
 push: build
 	dts build_utils aido-container-push
 
-
-bump: # v2
-	bumpversion patch
-	git push --tags
-	git push
+ 
