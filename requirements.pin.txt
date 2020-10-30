@@ -8,5 +8,5 @@ Pillow # opt
 markdown # opt
 soupsieve # opt
 retrying # opt
-pydot # opt
+pydot==1.4.1 # opt
 
