@@ -1,5 +1,4 @@
-numpy
-opencv-python
+
 zuper-nodes-z6
 zuper-typing-z6
 zuper-ipce-z6
