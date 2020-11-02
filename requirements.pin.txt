@@ -1,12 +1,15 @@
-numpy
-opencv-python
-pipdeptree==0.13.2
-plotly # opt
-scipy # opt
-lxml # opt
-Pillow # opt
-markdown # opt
-soupsieve # opt
-retrying # opt
-pydot==1.4.1 # opt
+
+# These are all installed with apt
+
+# numpy
+# opencv-python
+# pipdeptree==0.13.2
+# plotly # opt
+# scipy # opt
+# lxml # opt
+# Pillow # opt
+# markdown # opt
+# soupsieve # opt
+# retrying # opt
+# pydot==1.4.1 # opt
 

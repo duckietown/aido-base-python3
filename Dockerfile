@@ -1,9 +1,15 @@
 ARG AIDO_REGISTRY
 
-FROM ${AIDO_REGISTRY}/python:3.8
+# 3.8
+FROM library/python@sha256:5b1dc84f5b565ef0a12c093734e76dc7fef2825d7713f90cc5634e1b32c21af1
 WORKDIR /project
 
-RUN apt-get update && apt-get install -y  net-tools ffmpeg mencoder && apt-get clean && \
+RUN apt-get update && apt-get install -y  \
+    net-tools ffmpeg mencoder \
+    python3-opencv python3-numpy python3-scipy python3-plotly  python3-lxml \
+    python3-pillow python3-markdown python3-soupsieve python3-retrying python3-pydot \
+    python3-pipdeptree \
+    && apt-get clean && \
     rm -r /var/lib/apt/lists/*
 
 ARG PIP_INDEX_URL
