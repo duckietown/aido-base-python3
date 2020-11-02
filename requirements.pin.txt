@@ -1,8 +1,5 @@
-
-# These are all installed with apt
-
 # numpy
-# opencv-python
+opencv-python==4.3.0.36
 # pipdeptree==0.13.2
 # plotly # opt
 # scipy # opt
