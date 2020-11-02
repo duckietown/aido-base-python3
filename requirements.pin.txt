@@ -9,4 +9,5 @@ markdown # opt
 soupsieve # opt
 retrying # opt
 pydot==1.4.1 # opt
+pipdeptree
 
