@@ -8,11 +8,12 @@ ENV DEBIAN_FRONTEND=noninteractive
 
 RUN apt-get update && apt-get install -y apt-utils && apt-get install -y  \
     net-tools ffmpeg mencoder \
-    python3-opencv python3-numpy python3-scipy python3-plotly  python3-lxml \
-    python3-pillow python3-markdown python3-soupsieve python3-retrying python3-pydot \
-    python3-pipdeptree \
     && apt-get clean && \
     rm -r /var/lib/apt/lists/*
+#    python3-opencv python3-numpy python3-scipy python3-plotly  python3-lxml \
+#    python3-pillow python3-markdown python3-soupsieve python3-retrying python3-pydot \
+#    python3-pipdeptree \
+
 
 ARG PIP_INDEX_URL
 ENV PIP_INDEX_URL=${PIP_INDEX_URL}
