@@ -1,8 +1,6 @@
 
-ARG AIDO_REGISTRY
-
 # 3.8
-FROM ${AIDO_REGISTRY}/library/python@sha256:5b1dc84f5b565ef0a12c093734e76dc7fef2825d7713f90cc5634e1b32c21af1
+FROM library/python@sha256:5b1dc84f5b565ef0a12c093734e76dc7fef2825d7713f90cc5634e1b32c21af1
 WORKDIR /project
 
 ENV DEBIAN_FRONTEND=noninteractive
