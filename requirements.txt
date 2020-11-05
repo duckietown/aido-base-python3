@@ -3,12 +3,4 @@ zuper-nodes-z6
 zuper-typing-z6
 zuper-ipce-z6
 zuper-commons-z6
-procgraph-z6
-PyGeometry-z6
-# those are needed later anyway, we optimize a bit
-
-PyGeometry-z6 # opt
-beautifulsoup4 # opt
-
-compmake-z6 # opt
 aido-protocols-daffy
