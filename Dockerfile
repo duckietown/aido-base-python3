@@ -17,14 +17,14 @@ RUN apt-get update && apt-get install -y apt-utils && apt-get install -y  \
 ARG PIP_INDEX_URL
 ENV PIP_INDEX_URL=${PIP_INDEX_URL}
 
-RUN pip3 install -U "pip>=20.2"
+RUN python3 -m pip install -U pip
 COPY requirements.* ./
 RUN cat requirements.* > .requirements.txt
-RUN pip3 install --use-feature=2020-resolver -r .requirements.txt
+RUN python3 -m pip install --use-feature=2020-resolver -r .requirements.txt
 
 
-RUN pip freeze | tee /pip-freeze.txt
-RUN pip list | tee /pip-list.txt
+RUN python3 -m pip freeze | tee /pip-freeze.txt
+RUN python3 -m pip list | tee /pip-list.txt
 RUN pipdeptree
 
 ENV DISABLE_CONTRACTS 1
