@@ -20,7 +20,7 @@ ENV PIP_INDEX_URL=${PIP_INDEX_URL}
 RUN python3 -m pip install -U pip
 COPY requirements.* ./
 RUN cat requirements.* > .requirements.txt
-RUN python3 -m pip install --use-feature=2020-resolver -r .requirements.txt
+RUN python3 -m pip install -r .requirements.txt
 
 
 RUN python3 -m pip freeze | tee /pip-freeze.txt
