@@ -2,4 +2,4 @@ VERSION=0.1.0
 TYPE=template-aido
 TYPE_VERSION=1
 CONTAINER_TARGET=duckietown/aido-base-python3:daffy-amd64
-CONTAINER_BUILD_COMMAND=dts build_utils aido-container-build --use-branch daffy --ignore-untagged
+CONTAINER_BUILD_COMMAND=dts build_utils aido-container-build --use-branch daffy --ignore-untagged --push
