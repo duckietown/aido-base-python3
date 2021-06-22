@@ -13,7 +13,7 @@ RUN apt-get update && apt-get install -y apt-utils && apt-get install -y  \
 #    python3-pillow python3-markdown python3-soupsieve python3-retrying python3-pydot \
 #    python3-pipdeptree \
 
-
+ARG VERSION="5.1.0"
 ARG PIP_INDEX_URL="https://pypi.org/simple"
 ENV PIP_INDEX_URL=${PIP_INDEX_URL}
 
