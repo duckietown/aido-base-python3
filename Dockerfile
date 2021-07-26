@@ -1,6 +1,6 @@
 
 # 3.8
-FROM library/python@sha256:5b1dc84f5b565ef0a12c093734e76dc7fef2825d7713f90cc5634e1b32c21af1
+FROM library/python@sha256:0e699388e0d1e2fbeabf6ce25aae3f0014d5647a10c7d23053be9a7da3c9132a
 WORKDIR /project
 
 ENV DEBIAN_FRONTEND=noninteractive
