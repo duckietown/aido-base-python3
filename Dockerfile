@@ -1,6 +1,7 @@
 
 # 3.8
-FROM library/python@sha256:5b1dc84f5b565ef0a12c093734e76dc7fef2825d7713f90cc5634e1b32c21af1
+ARG DOCKER_REGISTRY
+FROM ${DOCKER_REGISTRY}/library/python:3.8
 WORKDIR /project
 
 ENV DEBIAN_FRONTEND=noninteractive
