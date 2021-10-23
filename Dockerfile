@@ -1,21 +1,19 @@
 
-# 3.8
-#ARG DOCKER_REGISTRY
-#FROM ${DOCKER_REGISTRY}/library/python:3.8
-
 ARG ARCH=amd64
-ARG OS_FAMILY=ubuntu
-ARG OS_DISTRO=focal
+ARG DISTRO=daffy
+ARG BASE_TAG=${DISTRO}-${ARCH}
+ARG BASE_IMAGE=dt-base-environment
+ARG DOCKER_REGISTRY=docker.io
 
-# base image
-FROM ${ARCH}/${OS_FAMILY}:${OS_DISTRO}
+# define base image
+FROM ${DOCKER_REGISTRY}/duckietown/${BASE_IMAGE}:${BASE_TAG}
 
 WORKDIR /project
 
 ENV DEBIAN_FRONTEND=noninteractive
 
 RUN apt-get update && apt-get install -y apt-utils && apt-get install -y  \
-    net-tools ffmpeg mencoder \
+    net-tools ffmpeg mencoder python3 python3-dev \
     && apt-get clean && \
     rm -r /var/lib/apt/lists/*
 #    python3-opencv python3-numpy python3-scipy python3-plotly  python3-lxml \
