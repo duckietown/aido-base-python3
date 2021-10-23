@@ -1,7 +1,15 @@
 
 # 3.8
-ARG DOCKER_REGISTRY
-FROM ${DOCKER_REGISTRY}/library/python:3.8
+#ARG DOCKER_REGISTRY
+#FROM ${DOCKER_REGISTRY}/library/python:3.8
+
+ARG ARCH=amd64
+ARG OS_FAMILY=ubuntu
+ARG OS_DISTRO=focal
+
+# base image
+FROM ${ARCH}/${OS_FAMILY}:${OS_DISTRO}
+
 WORKDIR /project
 
 ENV DEBIAN_FRONTEND=noninteractive
