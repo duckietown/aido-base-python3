@@ -1,30 +1,37 @@
 
-# 3.8
-FROM library/python@sha256:0e699388e0d1e2fbeabf6ce25aae3f0014d5647a10c7d23053be9a7da3c9132a
+ARG ARCH=amd64
+ARG DISTRO=daffy
+ARG BASE_TAG=${DISTRO}-${ARCH}
+ARG BASE_IMAGE=dt-base-environment
+ARG DOCKER_REGISTRY=docker.io
+
+# define base image
+FROM ${DOCKER_REGISTRY}/duckietown/${BASE_IMAGE}:${BASE_TAG}
+
 WORKDIR /project
 
 ENV DEBIAN_FRONTEND=noninteractive
 
 RUN apt-get update && apt-get install -y apt-utils && apt-get install -y  \
-    net-tools ffmpeg mencoder \
+    net-tools ffmpeg mencoder python3 python3-dev \
     && apt-get clean && \
     rm -r /var/lib/apt/lists/*
 #    python3-opencv python3-numpy python3-scipy python3-plotly  python3-lxml \
 #    python3-pillow python3-markdown python3-soupsieve python3-retrying python3-pydot \
 #    python3-pipdeptree \
 
-
-ARG PIP_INDEX_URL
+ARG VERSION="5.1.4"
+ARG PIP_INDEX_URL="https://pypi.org/simple"
 ENV PIP_INDEX_URL=${PIP_INDEX_URL}
 
-RUN python3 -m pip install --no-cache-dir -U "pip>=20.2"
+RUN python3 -m pip install -U pip
 COPY requirements.* ./
 RUN cat requirements.* > .requirements.txt
-RUN python3 -m pip install --no-cache-dir --use-feature=2020-resolver -r .requirements.txt
+RUN python3 -m pip install -r .requirements.txt
 
 
-RUN pip freeze | tee /pip-freeze.txt
-RUN pip list | tee /pip-list.txt
+RUN python3 -m pip freeze | tee /pip-freeze.txt
+RUN python3 -m pip list | tee /pip-list.txt
 RUN pipdeptree
 
 ENV DISABLE_CONTRACTS 1
