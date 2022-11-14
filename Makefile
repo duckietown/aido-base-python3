@@ -1,3 +1,3 @@
 
 build:
-	dts build_utils aido-container-build --use-branch daffy --ignore-untagged --force-login --push --platforms linux/arm64
+	dt-build_utils-cli aido-container-build --use-branch daffy --ignore-dirty --ignore-untagged --push --buildx --platforms linux/amd64,linux/arm64
