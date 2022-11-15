@@ -27,14 +27,15 @@ ENV PIP_INDEX_URL=${PIP_INDEX_URL}
 RUN python3 -m pip install -U pip
 COPY requirements.* ./
 RUN cat requirements.* > .requirements.txt
-RUN python3 -m pip install -r .requirements.txt
 
 RUN echo PLATFORM="${TARGETPLATFORM}" ARCH="${ARCH}" \
-    && case ${ARCH} in \
-         "arm32v7") apt-get update && apt-get install -y python3-opencv  && apt-get clean && rm -r /var/lib/apt/lists/*;; \
-         "arm64v8") python3 -m pip install opencv-python==4.4.0.44   ;; \
-         "amd64")   python3 -m pip install opencv-python==4.4.0.44  ;; \
+    && case ${TARGETPLATFORM} in \
+         "linux/arm/v7") apt-get update && apt-get install -y python3-opencv  && apt-get clean && rm -r /var/lib/apt/lists/*;; \
+         "linux/arm64") python3 -m pip install opencv-python==4.4.0.44   ;; \
+         "linux/amd64")   python3 -m pip install opencv-python==4.4.0.44  ;; \
     esac;
+
+RUN python3 -m pip install -r .requirements.txt
 
 RUN python3 -m pip freeze | tee /pip-freeze.txt
 RUN python3 -m pip list | tee /pip-list.txt
