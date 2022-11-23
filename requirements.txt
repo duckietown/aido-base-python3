@@ -1,6 +1,6 @@
 
-zuper-nodes-z6>=6.2.14
+zuper-nodes-z6>=6.2.15
 zuper-typing-z6
 zuper-ipce-z6
 zuper-commons-z6
-aido-protocols-daffy
+aido-protocols-daffy>=6.0.77
