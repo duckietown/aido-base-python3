@@ -1,12 +1,18 @@
-# numpy
-# opencv-python #==4.4.0.44
-# pipdeptree==0.13.2
-plotly # opt
-scipy # opt
-lxml # opt
-Pillow # opt
-markdown # opt
-soupsieve # opt
-retrying # opt
-pydot==1.4.1 # opt
+plotly
+scipy
+lxml
+Pillow
+Markdown
+soupsieve
+retrying
+pydot==1.4.1
 pipdeptree
+
+
+# WARNING (AfD): as of 2022-11-10, these are the libraries' versions that work on arm32v7
+# NOTE (AC): as of 2022-11-24, we don't care about arm32 for aido, so commenting out #
+# as pinning might create problems
+# numpy==1.17.3
+# cmake==3.24.3
+# scikit-build==0.13.1
+# opencv-python==4.4.0.46
