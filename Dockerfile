@@ -2,7 +2,7 @@ ARG ARCH=amd64
 ARG DISTRO=daffy
 ARG BASE_TAG=${DISTRO}-${ARCH}
 
-ARG BASE_IMAGE=dt-commons
+ARG BASE_IMAGE=dt-base-environment
 ARG DOCKER_REGISTRY=docker.io
 
 # define base image
