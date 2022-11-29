@@ -7,7 +7,7 @@ ARG DOCKER_REGISTRY=docker.io
 
 # define base image
 FROM ${DOCKER_REGISTRY}/duckietown/${BASE_IMAGE}:${BASE_TAG}
-
+HEALTHCHECK NONE
 WORKDIR /project
 
 ENV DEBIAN_FRONTEND=noninteractive
