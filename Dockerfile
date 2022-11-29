@@ -21,7 +21,7 @@ RUN apt-get update && apt-get install -y apt-utils && apt-get install -y  \
 #    python3-pipdeptree \
 
 ARG VERSION="5.1.4"
-ARG PIP_INDEX_URL="https://pypi.org/simple"
+ARG PIP_INDEX_URL="https://pypi.org/simple/"
 ENV PIP_INDEX_URL=${PIP_INDEX_URL}
 
 RUN python3 -m pip install -U pip
